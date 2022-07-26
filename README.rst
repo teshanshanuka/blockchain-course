@@ -15,6 +15,7 @@ Intro
 5. Hybrid smart contracts combine on-chain and off-chain components
 
 :Note:
+
    Dapp = Smart contract = Decentralized app
 
 Advantages
@@ -35,6 +36,7 @@ Important timestamps
 
    * Demo from `andersbrownworth.com <https://andersbrownworth.com/blockchain/blockchain>`_
 
+3. How public/ private keys work - `1:02:55 <https://youtu.be/M576WGiDBdQ?t=3780>`_
 
 
 ETH transactions
@@ -55,7 +57,7 @@ ETH transactions
 How Blockchain Works
 ********************
 
-**An example from `<https://andersbrownworth.com/blockchain/blockchain>`_ using sha256**
+**An example from** `<https://andersbrownworth.com/blockchain/blockchain>`_ **using sha256**
 
 *Block chain:*
 
@@ -77,4 +79,61 @@ How Blockchain Works
 
    ETH runs on Keccak-256 hashing
 
+*Private public keys*
 
+* One can sign some data with their private key. Anyone can validate the authenticity of a signed payload by validating 
+  the signature of the payload using the signer's public key.
+
+:Note:
+
+  ETH address is a part of your public key
+
+Consensus
+=========
+
+Majority ruling out a changed node is a part of the consensus.
+
+Roughly, consensus can be broken down to 
+
+1. Chain selection algo
+2. Cybil resistance mechanism
+
+Chain selection
++++++++++++++++
+
+How do we know which is the correct one? The more links in the chain the better. Go with the longest...
+
+Cybil resistance
+++++++++++++++++
+
+Blockchain's ability to defend against users creating a large number of identities to get advantage of the system
+
+Mainly there are two types
+
+  - Proof of work (PoW)
+    
+    PoW uses a competitive validation method to confirm transactions. This is a part of the consensus.
+    
+    A node has to go through a difficult process to find an answer to the PoW problem. *The hardness of the problem 
+    determines the block time*. This uses a lot of energy. 
+    
+    Miners get paid by block rewards which are newly generated currency, and transaction fees.
+
+  - Proof of stake (PoS)
+  
+    PoS uses randomly selected miners to confirm and add new blocks to the blockchain
+
+    This is more energy efficient
+
+    Transaction fees are paid to validators alongside block rewards.
+
+Cybil attack
+------------
+
+Someone create a large number of pseudo anonymous users to influence the network
+
+51% attack
+----------
+
+Chain selection goes with the longest network available. If one can have more than 51% of the network, they can fork
+and move the network to a network of theirs.
