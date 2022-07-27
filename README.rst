@@ -59,7 +59,7 @@ How Blockchain Works
 
 **An example from** `<https://andersbrownworth.com/blockchain/blockchain>`_ **using sha256**
 
-*Block chain:*
+**Block chain:**
 
 * A block has a block number, nonce, data, the previous hash and a hash
 * The hash of a block should fulfill a specific criteria to be a valid block. *This is the blockchain problem* (e.g. All
@@ -71,7 +71,7 @@ How Blockchain Works
 * If a peer A updated the hashes somehow in their ledger, other peers who are keeping a ledger won't agree with peer A.
   Majority will agree on the correct unchanged ledger record
 
-*Tokens:*
+**Tokens:**
 
 * Tokens are blocks with transaction history data
 
@@ -79,7 +79,7 @@ How Blockchain Works
 
    ETH runs on Keccak-256 hashing
 
-*Private public keys*
+**Private public keys**
 
 * One can sign some data with their private key. Anyone can validate the authenticity of a signed payload by validating 
   the signature of the payload using the signer's public key.
@@ -110,30 +110,53 @@ Blockchain's ability to defend against users creating a large number of identiti
 
 Mainly there are two types
 
-  - Proof of work (PoW)
-    
-    PoW uses a competitive validation method to confirm transactions. This is a part of the consensus.
-    
-    A node has to go through a difficult process to find an answer to the PoW problem. *The hardness of the problem 
-    determines the block time*. This uses a lot of energy. 
-    
-    Miners get paid by block rewards which are newly generated currency, and transaction fees.
+- Proof of work (PoW)
+ 
+  PoW uses a competitive validation method to confirm transactions. This is a part of the consensus.
 
-  - Proof of stake (PoS)
-  
-    PoS uses randomly selected miners to confirm and add new blocks to the blockchain
+  A node has to go through a difficult process to find an answer to the PoW problem. *The hardness of the problem 
+  determines the block time*. This uses a lot of energy. 
 
-    This is more energy efficient
+  Miners get paid by block rewards which are newly generated currency, and transaction fees.
 
-    Transaction fees are paid to validators alongside block rewards.
+- Proof of stake (PoS)
+
+  PoS uses randomly selected miners to confirm and add new blocks to the blockchain. Nodes need to put up some stake; 
+  if nodes misbehave, they can be slashed.
+
+  This is more energy efficient.
+
+  Transaction fees are paid to validators alongside block rewards.
+
+  *ETH2.0 is designed to user PoS*
 
 Cybil attack
 ------------
 
-Someone create a large number of pseudo anonymous users to influence the network
+Someone create a large number of pseudo anonymous users to influence the network. PoS blockchains are resistant to this
+since any new user needs to have some stake in the network. 
 
 51% attack
 ----------
 
 Chain selection goes with the longest network available. If one can have more than 51% of the network, they can fork
-and move the network to a network of theirs.
+and move the network to the longer chain.
+
+Scalability
++++++++++++
+
+Blocks has limited block space and a blockchain can have only so many of nodes. More transactions that need to 
+happen, the higher the gas prices will be. As gas prices keep rising, there will be a ceiling to the capabilities.
+
+Sharding
+--------
+
+A blockchain of blockchians. A main chain will coordinate the other chains that are hooked into it. Multiple chains
+means more block space. 
+
+* **Layer 1:** Base layer blockchain implementation (ETC, ETH...etc.)
+
+* **Layer 2:** Any application built on layer 1 (Chainlink, Arbitron...etc.) - They derive their security from their
+  main chain.
+
+
