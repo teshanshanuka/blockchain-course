@@ -160,3 +160,27 @@ means more block space.
   main chain.
 
 
+********
+Solidity
+********
+
+Chainlink
+=========
+
+`<https://docs.chain.link/>`_
+
+*"Chainlink expands the capabilities of smart contracts by enabling access to real-world data and off-chain 
+computation while maintaining the security and reliability guarantees inherent to blockchain technology."*
+
+**Rinkeby faucet for testing:** `<https://faucets.chain.link/rinkeby>`_
+
+Solidity in Remix
+=================
+
+Solidity in Local
+=================
+
+1. Install solidity compiler ``npm install solc``
+2. Compile the file ``node_modules/solc/solc.js MyCode.sol --bin -o bin/``
+
+The compiled binaries will be inside ``bin/``
